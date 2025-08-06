@@ -32,7 +32,7 @@ Untuk menjalankan proyek ini secara lokal, ikuti langkah-langkah berikut:
 
 1.  **Clone repository ini:**
     ```bash
-    git clone https://github.com/akbarmdhnn/proyek-tugasku.git
+    git clone https://github.com/akbarmdhnn/IBM-HACKTIV8-Capstone-Project.git
     ```
 2.  **Buka folder proyek:**
     ```bash
