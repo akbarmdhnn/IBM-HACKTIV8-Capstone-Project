@@ -36,7 +36,7 @@ Untuk menjalankan proyek ini secara lokal, ikuti langkah-langkah berikut:
     ```
 2.  **Buka folder proyek:**
     ```bash
-    cd proyek-tugasku
+    cd IBM-HACKTIV8-Capstone-Project
     ```
 3.  **Buka file `index.html`** langsung di browser pilihan Anda. Tidak ada instalasi atau dependensi lain yang diperlukan.
 
