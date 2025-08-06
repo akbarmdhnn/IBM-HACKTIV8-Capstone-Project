@@ -2,7 +2,7 @@
 
 ## Deskripsi
 
-TugasKu adalah sebuah aplikasi web sederhana yang dirancang untuk membantu pengguna mengelola tugas harian mereka dengan lebih efisien. Aplikasi ini memungkinkan pengguna untuk membuat, membaca, memperbarui, dan menghapus (CRUD) daftar tugas mereka. Proyek ini dibuat sebagai bagian dari Capstone Project Hacktiv8 x IBM SkillsBuild dengan fokus pada pengembangan antarmuka yang dinamis dan pemanfaatan AI sebagai alat bantu pengembangan.
+TugasKu adalah sebuah aplikasi web sederhana yang dirancang untuk membantu pengguna mengelola tugas harian dengan lebih efisien. Aplikasi ini memungkinkan pengguna untuk membuat, membaca, memperbarui, dan menghapus (CRUD) daftar tugas mereka. Proyek ini dibuat sebagai bagian dari Capstone Project Hacktiv8 x IBM SkillsBuild dengan fokus pada pengembangan antarmuka yang dinamis dan pemanfaatan AI sebagai alat bantu pengembangan.
 
 ---
 
