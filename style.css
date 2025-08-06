@@ -1,0 +1,230 @@
+/* ==========================================================================
+   1. General & Reset Styles
+   - Mengatur dasar-dasar halaman seperti font, warna latar, dan box-sizing.
+   ========================================================================== */
+
+/* Mengimpor font "Inter" dari Google Fonts untuk tampilan yang modern */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Aturan reset dasar untuk konsistensi di semua browser */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #F5F7FA; /* Latar belakang abu-abu muda */
+    color: #2C3E50; /* Warna teks utama (biru gelap) */
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   2. Main Layout
+   - Mengatur kontainer utama aplikasi.
+   ========================================================================== */
+
+.app-container {
+    max-width: 800px; /* Lebar maksimum agar tidak terlalu lebar di layar besar */
+    margin: 40px auto; /* Memberi jarak atas/bawah dan membuatnya center secara horizontal */
+    padding: 20px;
+}
+
+/* ==========================================================================
+   3. Profile Section
+   - Mendesain area profil pengguna di bagian atas.
+   ========================================================================== */
+
+.profile-section {
+    display: flex;
+    flex-direction: column; /* Awalnya menumpuk secara vertikal (mobile-first) */
+    align-items: center;   /* Pusatkan semua item di tengah */
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.profile-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* Membuatnya menjadi lingkaran sempurna */
+    background-color: #3498DB; /* Warna aksen biru */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem; /* Ukuran font untuk inisial */
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.profile-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.profile-stats {
+    font-size: 1rem;
+    color: #95A5A6; /* Warna abu-abu untuk teks sekunder */
+}
+
+
+/* ==========================================================================
+   4. Task Categories Section
+   - Mendesain header dan kartu-kartu kategori prioritas.
+   ========================================================================== */
+
+.main-header {
+    display: flex;
+    justify-content: space-between; /* Mendorong judul ke kiri dan tombol ke kanan */
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.main-header h2 {
+    font-size: 1.8rem;
+}
+
+.add-btn {
+    background-color: #3498DB; /* Warna aksen biru */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-btn:hover {
+    background-color: #2980B9; /* Warna sedikit lebih gelap saat di-hover */
+}
+
+.category-card {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Bayangan yang halus */
+    margin-bottom: 15px;
+    border-left: 5px solid; /* Garis di kiri untuk penanda prioritas */
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-3px); /* Sedikit terangkat saat di-hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Memberi warna spesifik pada garis kiri setiap kartu */
+#high-priority-card { border-color: #E74C3C; }
+#medium-priority-card { border-color: #F1C40F; }
+#low-priority-card { border-color: #95A5A6; }
+
+.category-card h3 {
+    margin-bottom: 10px;
+}
+
+.category-card p {
+    color: #95A5A6;
+    margin: 0;
+}
+
+/* ==========================================================================
+   5. Modals (Pop-ups) & Forms
+   - Mendesain pop-up dan formulir di dalamnya.
+   ========================================================================== */
+
+.modal-overlay {
+    position: fixed; /* Tetap di posisi yang sama bahkan saat di-scroll */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(44, 62, 80, 0.6); /* Latar belakang gelap semi-transparan */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Memastikan modal selalu di atas konten lain */
+}
+
+.modal-content {
+    background-color: #FFFFFF;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    width: 90%; /* Mengambil 90% lebar layar */
+    max-width: 500px; /* Tapi tidak lebih dari 500px */
+}
+
+/* Kelas untuk menyembunyikan modal */
+.hidden {
+    display: none;
+}
+
+/* Mendesain elemen-elemen di dalam formulir */
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Memberi jarak antar elemen form */
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="date"],
+.modal-content textarea,
+.modal-content select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.modal-content button[type="submit"] {
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3498DB;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content button[type="submit"]:hover {
+    background-color: #2980B9;
+}
+
+/* ==========================================================================
+   6. Responsive Design
+   - Aturan khusus untuk layar yang lebih besar (tablet/desktop).
+   ========================================================================== */
+
+@media (min-width: 768px) {
+    /* REVISI: Mengubah perataan profil di desktop */
+    .profile-section {
+        align-items: flex-start; /* Rata kiri, bukan tengah */
+        text-align: left;
+        width: 100%;
+    }
+
+    .profile-avatar {
+        margin: 0 0 15px 0; /* Hapus margin horizontal, beri margin bawah */
+    }
+    
+    /* Menggunakan Grid untuk layout kategori di desktop */
+    .task-categories {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Membuat 3 kolom untuk kartu */
+        gap: 20px; /* Jarak antar kartu */
+    }
+
+    /* Memastikan header mengambil lebar penuh di dalam grid */
+    .main-header {
+        grid-column: 1 / -1; /* Header akan mengambil 3 kolom penuh */
+    }
+}

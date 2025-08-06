@@ -1,11 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
+    <!-- Pengaturan dasar dan metadata halaman -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TugasKu</title>
+    <title>Aplikasi Task Manager</title>
+
+    <!-- Menghubungkan ke Google Fonts "Inter" untuk tipografi yang modern -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Menghubungkan ke file CSS eksternal untuk desain -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Tugasku</h1>
+    <!-- Kontainer Utama yang membungkus seluruh konten aplikasi -->
+    <div class="app-container">
+        
+        <!-- Bagian 1: Profil Pengguna -->
+        <!-- Menampilkan informasi ringkas tentang pengguna -->
+        <section class="profile-section">
+            <!-- Avatar akan diisi dengan inisial nama pengguna menggunakan JavaScript -->
+            <div class="profile-avatar"></div>
+            <!-- Nama pengguna akan diisi dari localStorage menggunakan JavaScript -->
+            <div class="profile-name"></div>
+            <!-- Statistik progres keseluruhan akan dihitung dan ditampilkan oleh JavaScript -->
+            <div class="profile-stats"></div>
+        </section>
+
+        <!-- Bagian 2: Daftar Kategori Tugas -->
+        <!-- Ini adalah area utama aplikasi tempat pengguna berinteraksi -->
+        <main class="task-categories">
+            <div class="main-header">
+                <h2>Tugas Saya</h2>
+                <!-- Tombol ini akan memunculkan modal untuk menambah tugas baru -->
+                <button id="add-task-btn" class="add-btn">+</button>
+            </div>
+            
+            <!-- Kartu untuk setiap kategori prioritas -->
+            <div class="category-card" id="high-priority-card">
+                <h3>Prioritas Tinggi</h3>
+                <p class="task-count">0 Tugas</p>
+                <p class="task-percentage">0% Selesai</p>
+            </div>
+            <div class="category-card" id="medium-priority-card">
+                <h3>Prioritas Menengah</h3>
+                <p class="task-count">0 Tugas</p>
+                <p class="task-percentage">0% Selesai</p>
+            </div>
+            <div class="category-card" id="low-priority-card">
+                <h3>Prioritas Rendah</h3>
+                <p class="task-count">0 Tugas</p>
+                <p class="task-percentage">0% Selesai</p>
+            </div>
+        </main>
+
+    </div>
+
+    <!-- ====================================================== -->
+    <!-- MODAL / POP-UP (Awalnya disembunyikan dengan class 'hidden') -->
+    <!-- ====================================================== -->
+
+    <!-- Modal #1: Selamat Datang untuk Pengguna Baru -->
+    <div id="welcome-modal" class="modal-overlay hidden">
+      <div class="modal-content">
+        <h2>Selamat Datang di Aplikasi TugasKu!</h2>
+        <p>Silakan masukkan nama Anda untuk memulai.</p>
+        <form id="welcome-form">
+          <input type="text" id="username-input" placeholder="Ketik nama Anda..." required>
+          <button type="submit">Simpan & Mulai</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Modal #2: Formulir untuk Menambah atau Mengubah Tugas -->
+    <div id="task-form-modal" class="modal-overlay hidden">
+      <div class="modal-content">
+        <!-- Judul modal ini akan diubah oleh JavaScript (Tambah/Ubah Tugas) -->
+        <h2 id="form-title">Tambah Tugas Baru</h2>
+        <form id="task-form">
+          <label for="task-name-input">Nama Tugas:</label>
+          <input type="text" id="task-name-input" required name="task-name">
+
+          <label for="task-description-input">Deskripsi:</label>
+          <textarea id="task-description-input" name="task-description"></textarea>
+
+          <label for="task-deadline-input">Tenggat Waktu:</label>
+          <input type="date" id="task-deadline-input" name="task-deadline">
+
+          <label for="task-priority-select">Prioritas:</label>
+          <select id="task-priority-select" name="task-priority">
+            <option value="high">Prioritas Tinggi</option>
+            <option value="medium">Prioritas Menengah</option>
+            <option value="low">Prioritas Rendah</option>
+          </select>
+
+          <!-- Tombol ini juga akan diubah teksnya oleh JavaScript (Tambah/Simpan) -->
+          <button type="submit" id="task-form-submit-btn">Tambah Tugas</button>
+        </form>
+      </div>
+    </div>
+    
+    <!-- Menghubungkan ke file JavaScript eksternal di akhir body untuk performa yang lebih baik -->
+    <script src="script.js"></script>
 </body>
 </html>
