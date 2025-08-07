@@ -46,7 +46,7 @@ body {
     width: 80px;
     height: 80px;
     border-radius: 50%; /* Membuatnya menjadi lingkaran sempurna */
-    background-color: #3498DB; /* Warna aksen biru */
+    background-color: #f16634; /* Warna aksen biru */
     color: white;
     display: flex;
     align-items: center;
@@ -100,7 +100,7 @@ body {
 }
 
 .add-btn {
-    background-color: #3498DB; /* Warna aksen biru */
+    background-color: #f16634; /* Warna aksen biru */
     color: white;
     border: none;
     border-radius: 50%;
@@ -112,7 +112,7 @@ body {
 }
 
 .add-btn:hover {
-    background-color: #2980B9; /* Warna sedikit lebih gelap saat di-hover */
+    background-color: #d25a2e; /* Warna sedikit lebih gelap saat di-hover */
 }
 
 .category-card {
@@ -132,7 +132,7 @@ body {
 }
 
 /* Memberi warna spesifik pada garis kiri setiap kartu */
-#high-priority-card { border-color: #E74C3C; }
+#high-priority-card { border-color: #ff3923; }
 #medium-priority-card { border-color: #F1C40F; }
 #low-priority-card { border-color: #95A5A6; }
 
@@ -207,13 +207,13 @@ body {
 }
 
 .modal-content button[type="submit"] {
-    background-color: #3498DB;
+    background-color: #f16634;
     color: white;
     flex-grow: 1; /* Agar tombol submit bisa mengisi ruang jika ada tombol lain di sebelahnya */
 }
 
 .modal-content button[type="submit"]:hover {
-    background-color: #2980B9;
+    background-color: #d25a2e;
 }
 
 .close-btn {
@@ -337,8 +337,8 @@ body {
 }
 
 .task-item.completed .complete-btn {
-    background-color: #3498DB;
-    border-color: #3498DB;
+    background-color: #2fbd40;
+    border-color: #2fbd40;
 }
 
 .task-item-actions button {
