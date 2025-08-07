@@ -66,4 +66,4 @@ if generated_code:
     print(generated_code)
     print("-----------------------------------------\n")
 
-print("Selesai.")
+print("Selesai")
