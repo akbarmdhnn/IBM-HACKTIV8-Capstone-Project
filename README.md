@@ -1,5 +1,7 @@
 # **IBM-HACKTIV8-Capstone-Project: Aplikasi Task Manager**
 
+## **Link Deployment: https://akbarmdhnn.github.io/IBM-HACKTIV8-Capstone-Project/**
+
 ## **Deskripsi**
 
 Aplikasi ini adalah sebuah *Personal Task Manager* berbasis web dengan fungsionalitas CRUD (Create, Read, Update, Delete) penuh. Dirancang dengan pendekatan *mobile-first*, aplikasi ini membantu pengguna untuk mengelola tugas harian mereka secara efisien melalui antarmuka yang bersih, modern, dan responsif. Proyek ini dibuat sebagai bagian dari Capstone Project HACKTIV8 x IBM SkillsBuild, dengan fokus utama pada pemanfaatan AI (IBM Granite) untuk mempercepat dan meningkatkan kualitas proses pengembangan kode.
