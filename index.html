@@ -19,19 +19,25 @@
     <div class="app-container">
         
         <!-- Bagian 1: Profil Pengguna -->
+        <!-- Menampilkan informasi ringkas tentang pengguna -->
         <section class="profile-section">
+            <!-- Avatar akan diisi dengan inisial nama pengguna menggunakan JavaScript -->
             <div class="profile-avatar"></div>
+            <!-- Nama pengguna akan diisi dari localStorage menggunakan JavaScript -->
             <div class="profile-name"></div>
+            <!-- Statistik progres keseluruhan akan dihitung dan ditampilkan oleh JavaScript -->
             <div class="profile-stats"></div>
         </section>
 
-        <!-- Bagian 2: Daftar Kategori Tugas -->
+        <!-- Bagian 2: Daftar Kategori Tugas (Dashboard Utama) -->
         <main class="task-categories">
             <div class="main-header">
                 <h2>Tugas Saya</h2>
+                <!-- Tombol ini akan memunculkan modal untuk menambah tugas baru -->
                 <button id="add-task-btn" class="add-btn">+</button>
             </div>
             
+            <!-- Kartu untuk setiap kategori prioritas -->
             <div class="category-card" id="high-priority-card">
                 <h3>Prioritas Tinggi</h3>
                 <p class="task-count">0 Tugas</p>
@@ -49,10 +55,11 @@
             </div>
         </main>
 
-        <!-- REVISI: Bagian 3: Tampilan Daftar Tugas (Awalnya Tersembunyi) -->
+        <!-- Bagian 3: Tampilan Daftar Tugas (Awalnya Tersembunyi) -->
+        <!-- Tampilan ini akan muncul saat salah satu kartu kategori di-klik -->
         <section class="task-list-view hidden">
             <div class="list-header">
-                <button id="back-to-dashboard-btn">&larr; Kembali</button>
+                <button id="back-to-dashboard-btn">&larr;</button>
                 <h2 id="list-title">Prioritas Tugas</h2>
             </div>
             <div id="task-list-container">
@@ -62,16 +69,20 @@
 
         <!-- Footer Aplikasi -->
         <footer class="app-footer">
-            <p>&copy; 2024 Dibuat oleh Akbar Ramadhan</p>
+            <p>&copy; 2024 Dibuat oleh Akbar Ramadhan ,ibm-granite/granite-3.3-8b-instruct, dan Gemini</p>
         </footer>
 
     </div>
 
-    <!-- === MODAL / POP-UP === -->
+    <!-- ====================================================== -->
+    <!-- MODAL / POP-UP (Awalnya disembunyikan dengan class 'hidden') -->
+    <!-- ====================================================== -->
+
+    <!-- Modal #1: Selamat Datang untuk Pengguna Baru -->
     <div id="welcome-modal" class="modal-overlay hidden">
       <div class="modal-content">
         <button class="close-btn" id="close-welcome-modal">&times;</button>
-        <h2>Selamat Datang di Aplikasi TugasKu!</h2>
+        <h2>Selamat Datang!</h2>
         <p>Silakan masukkan nama Anda untuk memulai.</p>
         <form id="welcome-form">
           <input type="text" id="username-input" placeholder="Ketik nama Anda..." required>
@@ -79,6 +90,8 @@
         </form>
       </div>
     </div>
+
+    <!-- Modal #2: Formulir untuk Menambah atau Mengubah Tugas -->
     <div id="task-form-modal" class="modal-overlay hidden">
       <div class="modal-content">
         <button class="close-btn" id="close-task-form-modal">&times;</button>
@@ -96,12 +109,15 @@
             <option value="medium">Prioritas Menengah</option>
             <option value="low">Prioritas Rendah</option>
           </select>
-          <button type="submit" id="task-form-submit-btn">Tambah Tugas</button>
+          <div class="form-actions">
+            <button type="button" id="task-form-complete-btn" class="complete-task-btn hidden">Tandai Selesai</button>
+            <button type="submit" id="task-form-submit-btn">Tambah Tugas</button>
+          </div>
         </form>
       </div>
     </div>
     
-    <!-- Menghubungkan ke file JavaScript eksternal -->
+    <!-- Menghubungkan ke file JavaScript eksternal di akhir body untuk performa yang lebih baik -->
     <script src="script.js"></script>
 </body>
 </html>
