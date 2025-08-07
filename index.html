@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aplikasi Task Manager</title>
 
-    <!-- REVISI: Menambahkan ikon logo (favicon) di tab browser -->
+    <!-- Menambahkan ikon logo (favicon) di tab browser -->
     <link rel="icon" type="image/png" href="https://hacktiv8.com/favicon/favicon-32x32.png">
 
     <!-- Menghubungkan ke Google Fonts "Inter" untuk tipografi yang modern -->
@@ -107,6 +107,18 @@
           </div>
         </form>
       </div>
+    </div>
+    
+    <!-- Modal #3: Konfirmasi Hapus (Awalnya Tersembunyi) -->
+    <div id="delete-confirm-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <h2>Konfirmasi Hapus</h2>
+            <p>Apakah Anda yakin ingin menghapus tugas ini?</p>
+            <div class="form-actions">
+                <button id="cancel-delete-btn" class="btn-secondary">Batal</button>
+                <button id="confirm-delete-btn" class="btn-danger">Hapus</button>
+            </div>
+        </div>
     </div>
     
     <!-- Menghubungkan ke file JavaScript eksternal -->

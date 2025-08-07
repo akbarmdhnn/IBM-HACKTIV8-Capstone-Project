@@ -46,7 +46,7 @@ body {
     width: 80px;
     height: 80px;
     border-radius: 50%; /* Membuatnya menjadi lingkaran sempurna */
-    background-color: #f16634; /* Warna aksen biru */
+    background-color: #f16634; /* Warna aksen oranye */
     color: white;
     display: flex;
     align-items: center;
@@ -100,7 +100,7 @@ body {
 }
 
 .add-btn {
-    background-color: #f16634; /* Warna aksen biru */
+    background-color: #f16634; /* Warna aksen oranye */
     color: white;
     border: none;
     border-radius: 50%;
@@ -172,6 +172,15 @@ body {
     position: relative; /* Diperlukan untuk positioning tombol close */
 }
 
+/* REVISI: Menambahkan jarak di bawah judul dan paragraf di dalam modal */
+.modal-content h2 {
+    margin-bottom: 15px;
+}
+.modal-content p {
+    margin-bottom: 20px;
+}
+
+
 /* Kelas untuk menyembunyikan elemen */
 .hidden {
     display: none;
@@ -231,6 +240,7 @@ body {
 .form-actions {
     display: flex;
     gap: 10px;
+    margin-top: 10px;
 }
 
 .complete-task-btn {
@@ -240,6 +250,24 @@ body {
 
 .complete-task-btn:hover {
     background-color: #27AE60;
+}
+
+/* Aturan baru untuk tombol di modal konfirmasi */
+.btn-danger {
+    background-color: #E74C3C;
+    color: white;
+    flex-grow: 1;
+}
+.btn-danger:hover {
+    background-color: #c0392b;
+}
+.btn-secondary {
+    background-color: #bdc3c7;
+    color: #2c3e50;
+    flex-grow: 1;
+}
+.btn-secondary:hover {
+    background-color: #95a5a6;
 }
 
 /* ==========================================================================

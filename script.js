@@ -17,6 +17,11 @@ const taskFormSubmitBtn = document.getElementById('task-form-submit-btn');
 const closeTaskFormModalBtn = document.getElementById('close-task-form-modal');
 const completeTaskBtn = document.getElementById('task-form-complete-btn');
 
+// Selektor untuk modal konfirmasi hapus
+const deleteConfirmModal = document.getElementById('delete-confirm-modal');
+const confirmDeleteBtn = document.getElementById('confirm-delete-btn');
+const cancelDeleteBtn = document.getElementById('cancel-delete-btn');
+
 const profileSection = document.querySelector('.profile-section');
 const profileAvatar = document.querySelector('.profile-avatar');
 const profileName = document.querySelector('.profile-name');
@@ -36,6 +41,7 @@ let tasks = getTasksFromLocalStorage();
 let currentUser = localStorage.getItem('username') || '';
 let editingTaskId = null; // Variabel untuk melacak tugas mana yang sedang di-edit.
 let currentCategory = null; // Variabel untuk melacak kategori mana yang sedang dilihat.
+let taskToDeleteId = null; // Variabel untuk menyimpan ID tugas yang akan dihapus
 
 // ===================================================================================
 // BAGIAN 2: FUNGSI-FUNGSI INTI (MANAJEMEN DATA & TAMPILAN)
@@ -306,14 +312,12 @@ function toggleTaskComplete(taskId) {
 }
 
 /**
- * Menghapus sebuah tugas dari array.
+ * Membuka modal konfirmasi sebelum menghapus tugas.
  * @param {number} taskId - ID dari tugas yang akan dihapus.
  */
 function deleteTask(taskId) {
-    tasks = tasks.filter(task => task.id !== taskId);
-    saveTasksToLocalStorage(tasks);
-    if (currentCategory) { showTaskListView(currentCategory); }
-    renderDashboard();
+    taskToDeleteId = taskId; // Simpan ID tugas yang akan dihapus
+    deleteConfirmModal.classList.remove('hidden'); // Tampilkan modal konfirmasi
 }
 
 /**
@@ -363,7 +367,6 @@ categoryCards.forEach(card => {
 backToDashboardBtn.addEventListener('click', showDashboardView);
 
 // Menggunakan Event Delegation untuk tombol di dalam daftar tugas
-// Ini lebih efisien daripada menambah event listener ke setiap tombol
 taskListContainer.addEventListener('click', (event) => {
     const target = event.target;
     const taskItem = target.closest('.task-item');
@@ -378,6 +381,20 @@ taskListContainer.addEventListener('click', (event) => {
     } else if (target.classList.contains('delete-btn')) {
         deleteTask(taskId);
     }
+});
+
+// Event listener untuk modal konfirmasi hapus
+cancelDeleteBtn.addEventListener('click', () => {
+    deleteConfirmModal.classList.add('hidden');
+});
+
+confirmDeleteBtn.addEventListener('click', () => {
+    // Logika hapus yang sebenarnya dipindahkan ke sini
+    tasks = tasks.filter(task => task.id !== taskToDeleteId);
+    saveTasksToLocalStorage(tasks);
+    if (currentCategory) { showTaskListView(currentCategory); }
+    renderDashboard();
+    deleteConfirmModal.classList.add('hidden');
 });
 
 // Menjalankan fungsi init() setelah seluruh halaman HTML selesai dimuat.
