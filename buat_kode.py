@@ -33,37 +33,37 @@ def generate_code_from_ai(prompt_text):
         return None
 
 # ==============================================================================
-# PROMPT #9: Meminta Kode CSS untuk Modal (Pop-up)
+# PROMPT #7: Meminta Logika JavaScript untuk Aksi pada Item Tugas
 # ==============================================================================
 prompt_to_run = """
-You are an expert frontend web developer.
+You are an expert JavaScript developer.
 
-Question: Generate the CSS code ONLY for the modals (pop-ups) of the Task Manager application.
+Context:
+- The HTML for the task list is generated dynamically inside a container with id `task-list-container`.
+- Each task item has a unique `data-id` attribute.
+- Each task item has buttons with classes `.complete-btn`, `.edit-btn`, and `.delete-btn`.
+- We have an array `tasks` and functions `saveTasksToLocalStorage`, `renderDashboard`, and `openTaskForm`.
 
-Context & Requirements:
-- The CSS is for an external `style.css` file.
-- Use this color palette:
-    - Modal Background: #FFFFFF
-    - Overlay Background: rgba(0, 0, 0, 0.6)
-    - Main Text: #2C3E50
-    - Primary Button: #3498DB
+Question: Generate the JavaScript code to handle clicks on the action buttons within the task list. The code must be well-commented.
 
-The CSS must style:
-1.  The modal overlay (`.modal-overlay`): It should cover the entire screen (`position: fixed`), have a semi-transparent dark background, and be centered using flexbox.
-2.  The `.hidden` class: This class must set `display: none` to hide the modals by default.
-3.  The modal content box (`.modal-content`): It should have a white background, padding, a border-radius, and a box-shadow. It should also have a max-width and be responsive.
-4.  The form elements inside the modal (`form`, `input`, `textarea`, `select`, `button`): Style them to be clean, with full width, proper spacing, and modern aesthetics. The submit button should use the primary accent color and have a hover effect.
+Please provide the following:
+1.  **Event Delegation**: An event listener on the `task-list-container` to handle clicks on the action buttons efficiently.
+2.  **Functions with Comments**:
+    - A function `toggleTaskComplete(taskId)` that finds a task by its ID in the `tasks` array and flips its `isCompleted` status.
+    - A function `deleteTask(taskId)` that removes a task from the `tasks` array based on its ID.
+    - A function `editTask(taskId)` that finds a task by its ID and calls the `openTaskForm` function, passing the found task object.
+3.  **Integration**: Inside the main event listener, write the logic to check which button was clicked (using `event.target.classList.contains`) and call the appropriate function (`toggleTaskComplete`, `deleteTask`, or `editTask`), passing the task's ID. After each action, the tasks should be saved and the UI should be re-rendered.
 
-IMPORTANT: Provide only the raw CSS code. Do NOT include any explanation or markdown formatting.
+IMPORTANT: Provide only the raw JavaScript code. Do NOT include any HTML, CSS, or markdown formatting.
 """
 
 # --- MENJALANKAN SCRIPT ---
-print("--- MEMBUAT KODE CSS (MODAL & FORMULIR) ---")
+print("--- MEMBUAT LOGIKA JAVASCRIPT (AKSI TUGAS) ---")
 generated_code = generate_code_from_ai(prompt_to_run)
 
 if generated_code:
-    print("--- KODE CSS YANG DIHASILKAN ---")
+    print("--- KODE JAVASCRIPT YANG DIHASILKAN ---")
     print(generated_code)
-    print("--------------------------------\n")
+    print("-----------------------------------------\n")
 
 print("Selesai.")
